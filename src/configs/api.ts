@@ -1,0 +1,1 @@
+export const URL_API = "https://produtos.acessohost.com.br/api/"
