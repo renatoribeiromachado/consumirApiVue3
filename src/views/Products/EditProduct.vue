@@ -68,7 +68,7 @@ export default {
             if (imageUpload !== null)
                 
                 formData.append('image', imageUpload)
-                formData.append('_method', 'PATCH') 
+                formData.append('_method', 'PATCH')  
 
             const config = {
                 headers:{
