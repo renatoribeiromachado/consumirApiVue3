@@ -18,6 +18,6 @@
                                 .then(() => router.push({name: 'products.index'}))
         },
         
-    }
-    
+    } 
+
 </script>
