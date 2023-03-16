@@ -80,7 +80,7 @@ export default {
                         .then(() => router.push({name: 'products.index'}))
   
         }
-
+ 
         return {
             editProduct,
             product,
