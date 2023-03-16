@@ -10,14 +10,20 @@ export default class ProductService {
         return axios.post('/products', params, config)
     }
 
-    static async editProduct(id, params,formData, config)
+    static async editProduct(id, params, config)
     {
-        return axios.put(`/products/${id}`, params, formData, config)
+    console.log("parametros ",config)
+        return axios.post(`/products/${id}`, params, config)
     }
 
     static async getProduct(id)
     {
         return axios.get(`/products/${id}`)
+    }
+
+    static async deleteProduct(id)
+    {
+        return axios.delete(`/products/${id}`)
     }
 
 }
