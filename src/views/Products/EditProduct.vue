@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { onMounted, reactive } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 
 import ProductService from '@/services/products.service'
 import router from '@/router'
@@ -34,7 +34,12 @@ export default {
         }
     },
     setup(props) {
-         let imageUpload = null
+
+        const category_id = ref('')
+        const name = ref('')
+        const description = ref('')
+        let imageUpload = null
+
         const product = reactive({
             category_id: '',
             name: '',
@@ -62,13 +67,17 @@ export default {
                         })
               
         })
-        let formData = new FormData()
+
 
         const editProduct = () => {
-            if (imageUpload !== null)
+            if (imageUpload !== null){
                 
+                const formData = new FormData()
                 formData.append('image', imageUpload)
-                formData.append('_method', 'PATCH')  
+                formData.append('category_id', category_id.value);
+                formData.append('name', name.value);
+                formData.append('description', description.value);
+            }  
 
             const config = {
                 headers:{
