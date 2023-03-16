@@ -8,13 +8,21 @@
         Carregando os produtos
     </div>
 
-    <ul>
-        <li v-for="product in products" :key="product.id">
-        {{ product.name }}
-        <img :src="`${path}${product.image}`" :alt="product.image" style="max-width: 150px; "/> 
-            <router-link :to="{name: 'products.edit', params: {id: product.id}}"><i class="fas fa-edit"></i> Editar</router-link>
-        </li>
-    </ul>
+    <table>
+        <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+        <tr v-for="product in products" :key="product.id">
+            <td><img :src="`${path}${product.image}`" :alt="product.image" style="max-width: 70px; "/> </td>
+            <td>{{ product.name }}</td>
+            <td><router-link :to="{name: 'products.edit', params: {id: product.id}}"><i class="fas fa-edit"></i> Editar</router-link></td>
+            <td><router-link :to="{name: 'products.delete', params: {id: product.id}}"><i class="fas fa-edit"></i> Deletar</router-link></td>
+        </tr>
+    </table>
+    
 </template> 
 
 <script>

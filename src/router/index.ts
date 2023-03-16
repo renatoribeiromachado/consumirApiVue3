@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Products from '../views/Products/Products.vue'
 import AddProduct from '../views/Products/AddProduct.vue'
 import EditProduct from '../views/Products/EditProduct.vue'
+import DeleteProduct from '../views/Products/DeleteProduct.vue'
 
 
 const router = createRouter({
@@ -23,6 +24,12 @@ const router = createRouter({
       path: '/products/:id/edit',
       name: 'products.edit',
       component: EditProduct,
+      props: true
+    },
+    {
+      path: '/products/:id/delete',
+      name: 'products.delete',
+      component: DeleteProduct,
       props: true
     },
   

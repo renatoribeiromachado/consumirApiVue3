@@ -48,9 +48,9 @@ export default {
             formData.append('category_id', category_id.value);
             formData.append('name', name.value);
             formData.append('description', description.value);
-            if (imageUpload !== null)
+            if (imageUpload !== null){
                 formData.append('image', imageUpload);
-
+            }
             const config = {
                 headers:{
                     'content-type': 'multipart/form-data'
