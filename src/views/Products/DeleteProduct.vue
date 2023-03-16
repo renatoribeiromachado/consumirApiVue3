@@ -1,6 +1,6 @@
 
 <script>
-
+    //Teste
     import ProductService from '@/services/products.service'
     import router from '@/router'
 
